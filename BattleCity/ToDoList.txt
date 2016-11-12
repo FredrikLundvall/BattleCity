@@ -1,0 +1,10 @@
+﻿  Justering så att positionerna som används till skärmen (eller kanske alla positioner) är heltal
+    För att få till positionerna så bör alltid int returneras, float bör användas internt för att få mjukare 
+    rörelser och ska därför användas vid move av saker. Int ska också användas i kollisions kontrollerna
+
+  Förstörda tanks vid träff av projektil
+  Animation av tanks (för att använda till förstörandet av tanks)
+x	Slide : Objekt för en texture med id från listan, en origin (hotspot), och en boundingarea
+    Olika slides ska vara den aktuella beroende på state för det styrande objektet (player, projectile)
+	Slideshow : Objekt som kan returnera en slide beroende på tidpunkt.
+	SlideshowMachine : Den kan starta animationer.
