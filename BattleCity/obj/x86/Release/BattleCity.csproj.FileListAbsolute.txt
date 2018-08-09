@@ -1,0 +1,126 @@
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tank.png
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_asphalt.png
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_brick.png
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_metal.png
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_tree.png
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\BattleCity.exe
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\BattleCity.pdb
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\MonoGame.Framework.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.MediaFoundation.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XAudio2.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.DXGI.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D11.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct2D1.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XInput.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.RawInput.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D9.dll
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\MonoGame.Framework.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.MediaFoundation.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XAudio2.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.DXGI.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D11.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct2D1.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XInput.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.RawInput.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D9.xml
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\obj\x86\Release\BattleCity.csprojResolveAssemblyReference.cache
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\obj\x86\Release\BattleCity.exe
+C:\Users\fredrik\Documents\privat\Egna privata\battle_city\BattleCity\BattleCity\obj\x86\Release\BattleCity.pdb
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tank.png
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_asphalt.png
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_brick.png
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_metal.png
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_tree.png
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\BattleCity.exe
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\BattleCity.pdb
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\MonoGame.Framework.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.MediaFoundation.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XAudio2.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.DXGI.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D11.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct2D1.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XInput.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.RawInput.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D9.dll
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\MonoGame.Framework.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.MediaFoundation.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XAudio2.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.DXGI.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D11.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct2D1.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XInput.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.RawInput.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D9.xml
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\obj\x86\Release\BattleCity.csprojResolveAssemblyReference.cache
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\obj\x86\Release\BattleCity.exe
+C:\Users\fredrik\Documents\Dropbox\source\BattleCity\BattleCity\obj\x86\Release\BattleCity.pdb
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\obj\x86\Release\BattleCity.exe
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\obj\x86\Release\BattleCity.pdb
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_asphalt.png
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_brick.png
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_metal.png
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_tree.png
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tank.png
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_shot.png
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tank2.png
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\BattleCity.exe
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\BattleCity.pdb
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\MonoGame.Framework.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.MediaFoundation.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XAudio2.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.DXGI.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D11.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct2D1.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XInput.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.RawInput.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D9.dll
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\MonoGame.Framework.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.MediaFoundation.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XAudio2.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.DXGI.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D11.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct2D1.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XInput.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.RawInput.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D9.xml
+C:\Users\fredrik\Dropbox\source\Repos\BattleCity\BattleCity\obj\x86\Release\BattleCity.csprojResolveAssemblyReference.cache
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\obj\x86\Release\BattleCity.exe
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\obj\x86\Release\BattleCity.pdb
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tank.png
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_asphalt.png
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_brick.png
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_metal.png
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tile_tree.png
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_shot.png
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_tank2.png
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\BattleCity.exe
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\BattleCity.pdb
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\MonoGame.Framework.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.MediaFoundation.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XAudio2.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.DXGI.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D11.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct2D1.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XInput.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.RawInput.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D9.dll
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\MonoGame.Framework.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.MediaFoundation.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XAudio2.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.DXGI.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D11.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct2D1.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.XInput.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.RawInput.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\SharpDX.Direct3D9.xml
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\obj\x86\Release\BattleCity.csprojResolveAssemblyReference.cache
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_explosion1.png
+C:\Users\fredrik\Documents\Dropbox\source\Repos\BattleCity\BattleCity\bin\Windows\x86\Release\battlecity_explosion2.png

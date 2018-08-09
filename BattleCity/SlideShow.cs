@@ -20,9 +20,32 @@ namespace BattleCity
             _slideList.Add(slide);
         }
 
-        public Slide GetSlide()
+        public Slide GetSlide(float elapsedSeconds = 0)
         {
-            return _slideList[0];//Det blir mer senare
+            Slide curSlide = _slideList[0];
+            if (elapsedSeconds > 0 && _slideList.Count != 1)
+            {
+                float summedDisplayTime = 0;
+                foreach (Slide slide in _slideList)
+                {
+                    curSlide = slide;
+                    summedDisplayTime += slide.GetDisplayTime();
+                    if (summedDisplayTime > elapsedSeconds)
+                        break;
+                }
+            }
+            return curSlide;
         }
+
+        public float GetTotalDisplayTime()
+        {
+            float summedDisplayTime = 0;
+            foreach (Slide slide in _slideList)
+            {
+                summedDisplayTime += slide.GetDisplayTime();
+            }
+            return summedDisplayTime;
+        }
+
     }
 }

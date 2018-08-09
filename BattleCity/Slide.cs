@@ -12,6 +12,7 @@ namespace BattleCity
         int _textureIndex;
         Vector2 _origin;
         BoundingArea _boundingArea;
+        float _displayTime;
 
         public void SetBoundingArea(BoundingArea boundingArea)
         {
@@ -46,6 +47,16 @@ namespace BattleCity
         public void SetOrigin(Vector2 origin)
         {
             _origin = origin;
+        }
+
+        public void SetDisplayTime(float displayTime)
+        {
+            _displayTime = displayTime;
+        }
+
+        public float GetDisplayTime()
+        {
+            return _displayTime;
         }
 
     }

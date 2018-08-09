@@ -33,6 +33,7 @@ namespace BattleCity
         Rectangle _myPlayerBlockedMapRect = new Rectangle();
         bool _myPlayerWasBlocked = false;
         ProjectileSpawner _projectileSpawner = new ProjectileSpawner(new List<Projectile>());
+        ExplosionSpawner _explosionSpawner = new ExplosionSpawner(new List<Explosion>());
 
         //Connection connection = new Connection();
 
@@ -47,14 +48,11 @@ namespace BattleCity
             Resolution.Init(ref _graphics);
             // Change Virtual Resolution 
             Resolution.SetVirtualResolution(256, 224);
-#if DEBUG
-            Resolution.SetResolution(1680, 1050, true);
+#if DEBUG         
+            Resolution.SetResolution(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height, false);
 #else
-            Resolution.SetResolution(1680, 1050, false);
+            Resolution.SetResolution(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height, true);
 #endif
-
-            //System.Windows.Forms.Form MyGameForm = (System.Windows.Forms.Form)System.Windows.Forms.Form.FromHandle(Window.Handle);
-            //MyGameForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
             Content.RootDirectory = "Content";
         }
@@ -85,7 +83,7 @@ namespace BattleCity
                 new Color[] { Color.White });// fill the texture with white
 
             FileStream tempstream;
-            Slide tmpSlide;
+            Slide tmpSlide, keepSlide;
             SlideShow tmpSlideShow;
             SlideShowMachine tmpSlideShowMachine;
             int tmpIndex;
@@ -95,8 +93,8 @@ namespace BattleCity
             tempstream.Close();
             tmpSlide = new Slide();
             tmpSlide.SetTextureIndex(tmpIndex);
-            tmpSlide.SetOrigin(new Vector2(7, 7));
-            tmpSlide.SetBoundingArea(new BoundingArea(new Vector2(0, 0), new Vector2(13, 13), new Vector2(6, 6)));
+            tmpSlide.SetOrigin(new Vector2(7.5f, 7.5f));
+            tmpSlide.SetBoundingArea(new BoundingArea(new Vector2(1, 1), new Vector2(13, 13), new Vector2(6.5f, 6.5f)));
             tmpSlideShow = new SlideShow(new List<Slide>());
             tmpSlideShow.AddSlide(tmpSlide);
             tmpSlideShowMachine = new SlideShowMachine(new Dictionary<int,SlideShow>());
@@ -108,8 +106,10 @@ namespace BattleCity
             tempstream.Close();
             tmpSlide = new Slide();
             tmpSlide.SetTextureIndex(tmpIndex);
-            tmpSlide.SetOrigin(new Vector2(7, 7));
-            tmpSlide.SetBoundingArea(new BoundingArea(new Vector2(0, 0), new Vector2(13, 13), new Vector2(6, 6)));
+            tmpSlide.SetOrigin(new Vector2(7.5f, 7.5f));
+            var a = _alltextures.GetTextureFromIndex(tmpIndex).Bounds;
+            tmpSlide.SetBoundingArea(new BoundingArea(new Vector2(1, 1), new Vector2(13, 13), new Vector2(6.5f, 6.5f)));
+
             tmpSlideShow = new SlideShow(new List<Slide>());
             tmpSlideShow.AddSlide(tmpSlide);
             tmpSlideShowMachine = new SlideShowMachine(new Dictionary<int, SlideShow>());
@@ -121,13 +121,36 @@ namespace BattleCity
             tempstream.Close();
             tmpSlide = new Slide();
             tmpSlide.SetTextureIndex(tmpIndex);
-            tmpSlide.SetOrigin(new Vector2(7, 7));
-            tmpSlide.SetBoundingArea(new BoundingArea(new Vector2(0, 0), new Vector2(4, 3), new Vector2(2, 1.5f)));
+            tmpSlide.SetOrigin(new Vector2(7.5f, 7.5f));
+            tmpSlide.SetBoundingArea(new BoundingArea(new Vector2(6, 6), new Vector2(4, 3), new Vector2(2, 1.5f)));
             tmpSlideShow = new SlideShow(new List<Slide>());
             tmpSlideShow.AddSlide(tmpSlide);
             tmpSlideShowMachine = new SlideShowMachine(new Dictionary<int, SlideShow>());
             tmpSlideShowMachine.AddSlideShow(SlideShowMachine.SLIDESHOW_RIGHT, tmpSlideShow);
             _projectileSpawner.SetSlideShowMachine(tmpSlideShowMachine);
+
+            tempstream = new FileStream("battlecity_explosion1.png", FileMode.Open);
+            tmpIndex = _alltextures.AddReturningIndex(Texture2D.FromStream(GraphicsDevice, tempstream));
+            tempstream.Close();
+            tmpSlide = new Slide();
+            tmpSlide.SetTextureIndex(tmpIndex);
+            tmpSlide.SetOrigin(new Vector2(7.5f, 7.5f));
+            tmpSlide.SetDisplayTime(0.2f);
+            tmpSlideShow = new SlideShow(new List<Slide>());
+            tmpSlideShow.AddSlide(tmpSlide);
+            keepSlide = tmpSlide;
+            tempstream = new FileStream("battlecity_explosion2.png", FileMode.Open);
+            tmpIndex = _alltextures.AddReturningIndex(Texture2D.FromStream(GraphicsDevice, tempstream));
+            tempstream.Close();
+            tmpSlide = new Slide();
+            tmpSlide.SetTextureIndex(tmpIndex);
+            tmpSlide.SetOrigin(new Vector2(7.5f, 7.5f));
+            tmpSlide.SetDisplayTime(0.2f);
+            tmpSlideShow.AddSlide(tmpSlide);
+            tmpSlideShow.AddSlide(keepSlide);
+            tmpSlideShowMachine = new SlideShowMachine(new Dictionary<int, SlideShow>());
+            tmpSlideShowMachine.AddSlideShow(SlideShowMachine.SLIDESHOW_RIGHT, tmpSlideShow);
+            _explosionSpawner.SetSlideShowMachine(tmpSlideShowMachine);
 
             tempstream = new FileStream("battlecity_tile_asphalt.png", FileMode.Open);
             int tileAsphaltIndex = _alltextures.AddReturningIndex(Texture2D.FromStream(GraphicsDevice, tempstream));
@@ -165,12 +188,12 @@ namespace BattleCity
                     if (x <= 4 && y <= 4)
                         rndVal = 0;
 
-                    if (rndVal > 98)
+                    if (rndVal > 96)
                     {                        
                         currentTile.SetTextureIndex(tileMetalIndex);
                         currentTile.SetIsBlocked(true);
                     }
-                    else if (rndVal > 95)
+                    else if (rndVal > 89)
                     {
                         currentTile.SetTextureIndex(tileBrickIndex);
                         currentTile.SetIsBlocked(true);
@@ -311,8 +334,13 @@ namespace BattleCity
             _projectileSpawner.Move((float)gameTime.ElapsedGameTime.TotalSeconds);
             _projectileSpawner.RemoveIfOutsideBounds(_mapUnder.GetBoundingArea());
 
-            _projectileSpawner.RemoveIfHittingBound(_myPlayer.GetBoundingArea());
-            _projectileSpawner.RemoveIfHittingBound(_theirPlayer.GetBoundingArea());
+            if (_projectileSpawner.RemoveIfHittingBound(_myPlayer.GetBoundingArea()))
+                _explosionSpawner.Spawn(_myPlayer.GetPos(), 1f);
+            if (_projectileSpawner.RemoveIfHittingBound(_theirPlayer.GetBoundingArea()))
+                _explosionSpawner.Spawn(_theirPlayer.GetPos(), 1f);
+
+            _explosionSpawner.AddElapsedSeconds((float)gameTime.ElapsedGameTime.TotalSeconds);
+            _explosionSpawner.RemoveIfLifetimePassed();
 
             base.Update(gameTime);
         }
@@ -331,6 +359,7 @@ namespace BattleCity
             _spriteBatch.Draw(_myPlayer.GetTextureFromList(_alltextures), _myPlayer.GetPos() + OFFSET, null, Color.White, _myPlayer.GetRotation(), _myPlayer.GetOrigin(), 1f, SpriteEffects.None, 0f);
             _projectileSpawner.Draw(OFFSET, _spriteBatch, _alltextures);
             _mapOver.Draw(OFFSET,_spriteBatch, _alltextures);
+            _explosionSpawner.Draw(OFFSET, _spriteBatch, _alltextures);
 
             if (_myPlayerWasBlocked)
             {

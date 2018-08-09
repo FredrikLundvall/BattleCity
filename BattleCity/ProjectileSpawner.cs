@@ -23,11 +23,6 @@ namespace BattleCity
             _slideShowMachine = slideShowmachine;
         }
 
-        //protected Slide GetSlide()
-        //{
-        //    return _slideShowMachine.GetSlideShow(SlideShowMachine.SLIDESHOW_RIGHT).GetSlide();
-        //}
- 
         public void Spawn(Vector2 pos, float rotation, float speed)
         {
             var projectile = new Projectile();
@@ -36,7 +31,7 @@ namespace BattleCity
             projectile.SetRotation(rotation);
             projectile.SetSpeed(speed);
             //TODO: Detta görs för att inte spränga sin egen tank, lös kanske på något annat sätt
-            projectile.Move(0.1f); 
+            projectile.Move(0.09f); 
             _spawnedProjectiles.Add(projectile);
         }
 
@@ -49,7 +44,7 @@ namespace BattleCity
         public void Draw(Vector2 pos, SpriteBatch spriteBatch, TextureList textureList)
         {
             foreach (Projectile projectile in _spawnedProjectiles)
-                spriteBatch.Draw(projectile.GetTextureFromList(textureList), projectile.GetPos() + pos, null, Color.White, projectile.GetRotation(), projectile.GetOrigin(), 1f, SpriteEffects.None, 0f);
+                spriteBatch.Draw(projectile.GetTextureFromList(textureList), (projectile.GetPos() + pos), null, Color.White, projectile.GetRotation(), projectile.GetOrigin(), 1f, SpriteEffects.None, 0f);
         }
 
 
@@ -65,17 +60,21 @@ namespace BattleCity
             }
         }
 
-        public void RemoveIfHittingBound(BoundingArea boundingArea)
+        public bool RemoveIfHittingBound(BoundingArea boundingArea)
         {
-            //TODO: Returnera något för att spränga tanks också
+            bool hitBound = false;
             int i = 0;
             while (i < _spawnedProjectiles.Count)
             {
                 if (_spawnedProjectiles[i].GetBoundingArea().Intersects(boundingArea))
+                { 
                     _spawnedProjectiles.RemoveAt(i);
+                    hitBound = true;
+                }
                 else
                     i++;
             }
+            return hitBound;
         }
     }
 

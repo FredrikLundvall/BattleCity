@@ -30,6 +30,7 @@ namespace BattleCity
         {
             BoundingArea boundingArea = GetSlide().GetBoundingArea();
             boundingArea.SetPosition(GetPos());
+            boundingArea.SetRotation(GetRotation());
             return boundingArea;
         }
 
