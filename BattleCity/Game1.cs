@@ -196,7 +196,17 @@ namespace BattleCity
                     else if (rndVal > 89)
                     {
                         currentTile.SetTextureIndex(tileBrickIndex);
+                        currentTile.SetTextureIndexDestroyed(tileAsphaltIndex);
                         currentTile.SetIsBlocked(true);
+                        //if (rndVal > 95)
+                        //    currentTile.SetLeftDownDestroyed(true);
+                        //if (rndVal > 94)
+                        //    currentTile.SetLeftUpDestroyed(true);
+                        //if (rndVal > 93)
+                        //    currentTile.SetRightDownDestroyed(true);
+                        //if (rndVal > 92)
+                        //    currentTile.SetRightUpDestroyed(true);
+
                     }
                     else
                     {
@@ -238,109 +248,126 @@ namespace BattleCity
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            //myPlayer
-            Vector2 myPosBefore = _myPlayer.GetPos();
-            if (Keyboard.GetState().IsKeyDown(Keys.Left) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed))
+            if (!_myPlayer.GetDestroyed())
             {
-                _myPlayer.MoveLeft(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
-                _myPlayer.SetRotationLeft();
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.Right) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed))
-            {
-                _myPlayer.MoveRight(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
-                _myPlayer.SetRotationRight();
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.Up) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).DPad.Up == ButtonState.Pressed))
-            {
-                _myPlayer.MoveUp(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
-                _myPlayer.SetRotationUp();
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.Down) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).DPad.Down == ButtonState.Pressed))
-            {
-                _myPlayer.MoveDown(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
-                _myPlayer.SetRotationDown();
-            }
-
-            if (Keyboard.GetState().IsKeyDown(Keys.RightControl) || (GamePad.GetState(PlayerIndex.One).Buttons.A == ButtonState.Pressed))
-            {
-                if (/*(!_myPlayer.GetFirePushed()) && */((gameTime.TotalGameTime - _myPlayer.GetTimeFireWasPushed()).TotalSeconds > 0.25))
+                //myPlayer
+                Vector2 myPosBefore = _myPlayer.GetPos();
+                if (Keyboard.GetState().IsKeyDown(Keys.Left) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed))
                 {
-                    _projectileSpawner.Spawn(_myPlayer.GetPos(), _myPlayer.GetRotation(), 1f);
-                    _myPlayer.SetFirePushed(true);
-                    _myPlayer.SetTimeFireWasPushed(gameTime.TotalGameTime);
+                    _myPlayer.MoveLeft(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
+                    _myPlayer.SetRotationLeft();
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.Right) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed))
+                {
+                    _myPlayer.MoveRight(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
+                    _myPlayer.SetRotationRight();
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.Up) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).DPad.Up == ButtonState.Pressed))
+                {
+                    _myPlayer.MoveUp(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
+                    _myPlayer.SetRotationUp();
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.Down) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.One).DPad.Down == ButtonState.Pressed))
+                {
+                    _myPlayer.MoveDown(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
+                    _myPlayer.SetRotationDown();
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.RightControl) || (GamePad.GetState(PlayerIndex.One).Buttons.A == ButtonState.Pressed))
+                {
+                    if (/*(!_myPlayer.GetFirePushed()) && */((gameTime.TotalGameTime - _myPlayer.GetTimeFireWasPushed()).TotalSeconds > 0.25))
+                    {
+                        _projectileSpawner.Spawn(_myPlayer.GetPos(), _myPlayer.GetRotation(), 1f);
+                        _myPlayer.SetFirePushed(true);
+                        _myPlayer.SetTimeFireWasPushed(gameTime.TotalGameTime);
+                    }
+                }
+                else
+                {
+                    _myPlayer.SetFirePushed(false);
+                }
+
+                //TODO: Gör en bättre kontroll här
+                Nullable<Rectangle> rectIsBlocking = _mapUnder.GetRectIfPlayerIsBlocked(_myPlayer.GetBoundingArea());
+                if (rectIsBlocking != null)
+                {
+                    _myPlayerWasBlocked = true;
+                    //_myPlayerBlockedRect = _myPlayer.GetBoundingingRect();
+                    _myPlayerBlockedMapRect = rectIsBlocking.Value;
+
+                    _myPlayer.SetPos(myPosBefore);
+                    _myPlayerBlockedRect = _myPlayer.GetBoundingingRect();
+                }
+                else
+                    _myPlayerWasBlocked = false;
+
+                if (_projectileSpawner.RemoveIfHittingBound(_myPlayer.GetBoundingArea()))
+                {
+                    _myPlayer.SetDestroyed(true);
+                    _myPlayer.SetTimeWhenDestroyed(gameTime.TotalGameTime);
+                    _explosionSpawner.Spawn(_myPlayer.GetPos(), 1f);
                 }
             }
-            else
-            {
-                _myPlayer.SetFirePushed(false);
-            }
 
 
-            //theirPlayer
-            Vector2 theirPosBefore = _theirPlayer.GetPos();
-            if (Keyboard.GetState().IsKeyDown(Keys.A) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Left.X < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Right.X < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).DPad.Left == ButtonState.Pressed))
+            if (!_theirPlayer.GetDestroyed())
             {
-                _theirPlayer.MoveLeft(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
-                _theirPlayer.SetRotationLeft();
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.D) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Left.X > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Right.X > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).DPad.Right == ButtonState.Pressed))
-            {
-                _theirPlayer.MoveRight(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
-                _theirPlayer.SetRotationRight();
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.W) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Left.Y > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Right.Y > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).DPad.Up == ButtonState.Pressed))
-            {
-                _theirPlayer.MoveUp(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
-                _theirPlayer.SetRotationUp();
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.S) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Left.Y < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Right.Y < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).DPad.Down == ButtonState.Pressed))
-            {
-                _theirPlayer.MoveDown(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
-                _theirPlayer.SetRotationDown();
-            }
-
-            if (Keyboard.GetState().IsKeyDown(Keys.LeftControl) || (GamePad.GetState(PlayerIndex.Two).Buttons.A == ButtonState.Pressed))
-            {
-                if (/*(!_theirPlayer.GetFirePushed()) && */((gameTime.TotalGameTime - _theirPlayer.GetTimeFireWasPushed()).TotalSeconds > 0.25))
+                //theirPlayer
+                Vector2 theirPosBefore = _theirPlayer.GetPos();
+                if (Keyboard.GetState().IsKeyDown(Keys.A) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Left.X < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Right.X < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).DPad.Left == ButtonState.Pressed))
                 {
-                    _projectileSpawner.Spawn(_theirPlayer.GetPos(), _theirPlayer.GetRotation(), 1f);
-                    _theirPlayer.SetFirePushed(true);
-                    _theirPlayer.SetTimeFireWasPushed(gameTime.TotalGameTime);
+                    _theirPlayer.MoveLeft(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
+                    _theirPlayer.SetRotationLeft();
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.D) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Left.X > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Right.X > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).DPad.Right == ButtonState.Pressed))
+                {
+                    _theirPlayer.MoveRight(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
+                    _theirPlayer.SetRotationRight();
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.W) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Left.Y > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Right.Y > THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).DPad.Up == ButtonState.Pressed))
+                {
+                    _theirPlayer.MoveUp(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
+                    _theirPlayer.SetRotationUp();
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.S) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Left.Y < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).ThumbSticks.Right.Y < -THUMBSTICK_THRESHOLD) || (GamePad.GetState(PlayerIndex.Two).DPad.Down == ButtonState.Pressed))
+                {
+                    _theirPlayer.MoveDown(0.7f, (float)gameTime.ElapsedGameTime.TotalSeconds);
+                    _theirPlayer.SetRotationDown();
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.LeftControl) || (GamePad.GetState(PlayerIndex.Two).Buttons.A == ButtonState.Pressed))
+                {
+                    if (/*(!_theirPlayer.GetFirePushed()) && */((gameTime.TotalGameTime - _theirPlayer.GetTimeFireWasPushed()).TotalSeconds > 0.25))
+                    {
+                        _projectileSpawner.Spawn(_theirPlayer.GetPos(), _theirPlayer.GetRotation(), 1f);
+                        _theirPlayer.SetFirePushed(true);
+                        _theirPlayer.SetTimeFireWasPushed(gameTime.TotalGameTime);
+                    }
+                }
+                else
+                {
+                    _theirPlayer.SetFirePushed(false);
+                }
+
+                if (_mapUnder.GetRectIfPlayerIsBlocked(_theirPlayer.GetBoundingArea()) != null)
+                    _theirPlayer.SetPos(theirPosBefore);
+
+                if (_projectileSpawner.RemoveIfHittingBound(_theirPlayer.GetBoundingArea()))
+                {
+                    _theirPlayer.SetDestroyed(true);
+                    _theirPlayer.SetTimeWhenDestroyed(gameTime.TotalGameTime);
+                    _explosionSpawner.Spawn(_theirPlayer.GetPos(), 1f);
                 }
             }
-            else
-            {
-                _theirPlayer.SetFirePushed(false);
-            }
 
-            //TODO: Gör en bättre kontroll här
-            Nullable<Rectangle> rectIsBlocking = _mapUnder.GetRectIfPlayerIsBlocked(_myPlayer.GetBoundingArea());
-            if (rectIsBlocking != null)
-            {
-                _myPlayerWasBlocked = true;
-                //_myPlayerBlockedRect = _myPlayer.GetBoundingingRect();
-                _myPlayerBlockedMapRect = rectIsBlocking.Value;
-
-                _myPlayer.SetPos(myPosBefore);
-                _myPlayerBlockedRect = _myPlayer.GetBoundingingRect();
-            }
-            else
-                _myPlayerWasBlocked = false;
-
-
-            if (_mapUnder.GetRectIfPlayerIsBlocked(_theirPlayer.GetBoundingArea()) != null)
-                _theirPlayer.SetPos(theirPosBefore);
 
             _projectileSpawner.Move((float)gameTime.ElapsedGameTime.TotalSeconds);
             _projectileSpawner.RemoveIfOutsideBounds(_mapUnder.GetBoundingArea());
 
-            if (_projectileSpawner.RemoveIfHittingBound(_myPlayer.GetBoundingArea()))
-                _explosionSpawner.Spawn(_myPlayer.GetPos(), 1f);
-            if (_projectileSpawner.RemoveIfHittingBound(_theirPlayer.GetBoundingArea()))
-                _explosionSpawner.Spawn(_theirPlayer.GetPos(), 1f);
-
             _explosionSpawner.AddElapsedSeconds((float)gameTime.ElapsedGameTime.TotalSeconds);
             _explosionSpawner.RemoveIfLifetimePassed();
+
+            _mapUnder.ProjectileCheck(_projectileSpawner);
 
             base.Update(gameTime);
         }
@@ -355,8 +382,14 @@ namespace BattleCity
 
             _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, Resolution.getTransformationMatrix());
             _mapUnder.Draw(OFFSET,_spriteBatch, _alltextures);
-            _spriteBatch.Draw(_theirPlayer.GetTextureFromList(_alltextures), _theirPlayer.GetPos() + OFFSET, null, Color.White, _theirPlayer.GetRotation(), _theirPlayer.GetOrigin(), 1f, SpriteEffects.None, 0f);
-            _spriteBatch.Draw(_myPlayer.GetTextureFromList(_alltextures), _myPlayer.GetPos() + OFFSET, null, Color.White, _myPlayer.GetRotation(), _myPlayer.GetOrigin(), 1f, SpriteEffects.None, 0f);
+            if (!_myPlayer.GetDestroyed())
+            {
+                _spriteBatch.Draw(_myPlayer.GetTextureFromList(_alltextures), _myPlayer.GetPos() + OFFSET, null, Color.White, _myPlayer.GetRotation(), _myPlayer.GetOrigin(), 1f, SpriteEffects.None, 0f);
+            }
+            if (!_theirPlayer.GetDestroyed())
+            {
+                _spriteBatch.Draw(_theirPlayer.GetTextureFromList(_alltextures), _theirPlayer.GetPos() + OFFSET, null, Color.White, _theirPlayer.GetRotation(), _theirPlayer.GetOrigin(), 1f, SpriteEffects.None, 0f);
+            }
             _projectileSpawner.Draw(OFFSET, _spriteBatch, _alltextures);
             _mapOver.Draw(OFFSET,_spriteBatch, _alltextures);
             _explosionSpawner.Draw(OFFSET, _spriteBatch, _alltextures);

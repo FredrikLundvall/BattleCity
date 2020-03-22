@@ -42,6 +42,11 @@ namespace BattleCity
             _origin = origin;
         }
 
+        public Vector2 GetPosWithOrigin()
+        {
+            return new Vector2(_position.X - _origin.X, _position.Y - _origin.Y);
+        }
+
         public void SetSize(Vector2 size)
         {
             _size = size;

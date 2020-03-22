@@ -15,6 +15,8 @@ namespace BattleCity
         bool _firePushed = false;
         TimeSpan _timeFireWasPushed = new TimeSpan(0);
         SlideShowMachine _slideShowMachine;
+        bool _destroyed = false;
+        TimeSpan _timeWhenDestroyed = new TimeSpan(0);
 
         public void SetSlideShowMachine(SlideShowMachine slideShowMachine)
         {
@@ -131,6 +133,26 @@ namespace BattleCity
         public TimeSpan GetTimeFireWasPushed()
         {
             return _timeFireWasPushed;
+        }
+
+        public void SetDestroyed(bool destroyed)
+        {
+            _destroyed = destroyed;
+        }
+
+        public bool GetDestroyed()
+        {
+            return _destroyed;
+        }
+
+        public void SetTimeWhenDestroyed(TimeSpan timeWhenDestroyed)
+        {
+            _timeWhenDestroyed = timeWhenDestroyed;
+        }
+
+        public TimeSpan GetTimeWhenDestroyed()
+        {
+            return _timeWhenDestroyed;
         }
 
     }

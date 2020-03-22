@@ -55,17 +55,26 @@ namespace BattleCity
             if (!limitRect.Contains(boundingArea.GetRect()))
                 return limitRect;
 
-            return getRectangle(boundingArea);
+            return getIntersectingRectangle(boundingArea);
         }
 
-        protected Nullable<Rectangle> getRectangle(BoundingArea boundingArea)
+        protected Nullable<Rectangle> getIntersectingRectangle(BoundingArea boundingArea)
+        {
+            Tile intersectingTile = getIntersectingTile(boundingArea);
+            if (intersectingTile == null)
+                return null;
+            else
+                return intersectingTile.GetBoundingArea().GetRect();
+        }
+
+        protected Tile getIntersectingTile(BoundingArea boundingArea)
         {
             for (int y = 0; y < _height; y++)
             {
                 for (int x = 0; x < _width; x++)
                 {
                     if (_tileArray[x, y].GetIsBlocked() && boundingArea.Intersects(_tileArray[x, y].GetBoundingArea()))
-                        return _tileArray[x, y].GetBoundingArea().GetRect();
+                        return _tileArray[x, y];
                 }
             }
             return null;
@@ -73,6 +82,7 @@ namespace BattleCity
 
         public void Draw(Vector2 pos, SpriteBatch spriteBatch, TextureList textureList)
         {
+            Tile tileAtPos;
             Vector2 tilepos = new Vector2(0, 0);
             for (int y = 0; y < _height; y++)
             {
@@ -80,11 +90,47 @@ namespace BattleCity
                 {
                     tilepos.X = x * _tileWidth;
                     tilepos.Y = y * _tileHeight;
-                    if (GetTileAtPosition(x, y) != null)
-                        spriteBatch.Draw(GetTileAtPosition(x, y).GetTextureFromList(textureList), tilepos + pos, Color.White);                
+                    tileAtPos = GetTileAtPosition(x, y);
+                    if (tileAtPos != null)
+                    {
+                        if (tileAtPos.GetUntouched())
+                            spriteBatch.Draw(tileAtPos.GetTextureFromList(textureList), tilepos + pos, Color.White);
+                        else
+                        {
+                            if(tileAtPos.GetTextureIndexDestroyed() > -1) 
+                                spriteBatch.Draw(tileAtPos.GetTextureDestroyedFromList(textureList), tilepos + pos, Color.White);
+                            if (!tileAtPos.GetLeftUpDestroyed())
+                                spriteBatch.Draw(tileAtPos.GetTextureFromList(textureList), tilepos + pos, null, new Rectangle(0, 0, 4, 4));
+                            if (!tileAtPos.GetRightUpDestroyed())
+                                spriteBatch.Draw(tileAtPos.GetTextureFromList(textureList), tilepos + pos + new Vector2(4, 0), null, new Rectangle(4, 0, 4, 4));
+                            if (!tileAtPos.GetLeftDownDestroyed())
+                                spriteBatch.Draw(tileAtPos.GetTextureFromList(textureList), tilepos + pos + new Vector2(0, 4), null, new Rectangle(0, 4, 4, 4));
+                            if (!tileAtPos.GetRightDownDestroyed())
+                                spriteBatch.Draw(tileAtPos.GetTextureFromList(textureList), tilepos + pos + new Vector2(4, 4), null, new Rectangle(4, 4, 4, 4));
+                        }
+                    }
                 }
             }
+
         }
 
+        public void ProjectileCheck(ProjectileSpawner projectileSpawner)
+        {
+            int i = 0;
+            while (i < projectileSpawner.GetSpawnedProjectiles().Count)
+            {
+                //TODO: get all intersecting tiles
+                Tile intersectingTile = getIntersectingTile(projectileSpawner.GetSpawnedProjectiles()[i].GetBoundingArea());
+                if (intersectingTile != null)
+                {
+                    if (intersectingTile.ProjectileImpact(projectileSpawner.GetSpawnedProjectiles()[i]))
+                        projectileSpawner.GetSpawnedProjectiles().RemoveAt(i);
+                    else
+                        i++;
+                }
+                else
+                    i++;
+            }
+        }
     }
 }

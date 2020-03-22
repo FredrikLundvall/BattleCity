@@ -18,6 +18,11 @@ namespace BattleCity
             _spawnedProjectiles = spawnedProjectiles;
         }
 
+        public IList<Projectile> GetSpawnedProjectiles()
+        {
+            return _spawnedProjectiles;
+        }
+
         public void SetSlideShowMachine(SlideShowMachine slideShowmachine)
         {
             _slideShowMachine = slideShowmachine;
@@ -31,7 +36,7 @@ namespace BattleCity
             projectile.SetRotation(rotation);
             projectile.SetSpeed(speed);
             //TODO: Detta görs för att inte spränga sin egen tank, lös kanske på något annat sätt
-            projectile.Move(0.09f); 
+            projectile.Move(0.1f); 
             _spawnedProjectiles.Add(projectile);
         }
 
